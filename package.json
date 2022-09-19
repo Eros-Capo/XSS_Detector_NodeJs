@@ -1,0 +1,32 @@
+{
+  "name": "xssdetector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend.js",
+    "watch": "pug -w ./public/template -o ./public/rendered -P"
+  },
+  "keywords": [
+    "xss",
+    "xssdetector"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eros-Capo/xssdetector.git"
+  },
+  "author": "Eros Capobianco",
+  "license": "GPLV3",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.0",
+    "mongoose": "^6.5.3",
+    "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.19",
+    "pdfkit": "^0.13.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "puppeteer": "^16.2.0"
+  }
+}
