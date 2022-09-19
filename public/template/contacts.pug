@@ -1,0 +1,32 @@
+extends ./includes/template_page.pug
+
+block content
+
+    div.col-12.text-center.contact-wrapper.mg-top-10
+        h1.mt-header Contacts
+
+    div.container-80.text-center
+        form(id="send_contact" action="/send_contact" method="post")
+            div.d-flex.flex-wrap.justify-content-around
+                div.col-12.col-sm-5.form-group
+                    label.w-100.text-left Name:
+                        input.form-control(type="text" name="name")
+                div.col-12.col-sm-5.form-group
+                    label.w-100.text-left Surname:
+                        input.form-control(type="text" name="surname")
+            br
+            div.d-flex.flex-wrap.justify-content-around
+                div.col-12.col-sm-5.form-group
+                    label.w-100.text-left E-mail:
+                        input.form-control(type="email" name="email")
+                div.col-12.col-sm-5.form-group
+                    label.w-100.text-left Phone:
+                        input.form-control(type="tel" name="phone")
+            br
+            div.d-flex.justify-content-center
+                div.col-12.col-sm-8.form-group
+                    label.w-100.text-left Message:
+                        textarea.form-control(rows="4" name="message")
+            br
+            div.d-flex.mb-3.justify-content-center
+                input.btn.btn-primary(type="submit" name="Submit" value="Submit")

@@ -1,0 +1,20 @@
+extends ./includes/template_page.pug
+
+block content
+    div.xss-wrapper
+        div.d-flex.justify-content-center.mg-top-10
+            div.col-12
+                h1.text-center XSS Detector
+                p.text-justify.
+                    XSS Detector è uno strumento sviluppato con lo scopo di rendere semplice e veloce per gli sviluppatori, la ricerca di eventuali vulnerabilità di tipo DOMBased, è semplicissimo!
+                    Inserisci un URL per compiere l'analisi, successivamente ti verrà mostrato un report PDF che potrai scaricare!
+
+        div.xss-content
+            div.col-md-8.col-12
+                form(id="xss_form" action="/xsstarget" method="post")
+                    div.col-12.form-group
+                        label.w-100.text-left Url to test:
+                        input.form-control(type="text", name="target", value="", placeholder="Target...")
+                        br
+                    div.d-flex.mb-3.justify-content-center
+                        input.btn.btn-primary(type="submit" name="Submit" value="Submit")

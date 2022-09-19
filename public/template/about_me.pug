@@ -1,0 +1,21 @@
+extends ./includes/template_page.pug
+
+block content
+    div.d-flex.justify-content-center
+        div.about-content.mg-top-10
+            div.d-flex.flex-wrap
+                div.col-md-6.col-12.align-self-center
+                    div.box-image.d-flex.justify-content-center
+                        img.w-100(src="me.jpg" alt="me")
+                div.col-md-6.col-12.align-self-center
+                    h1.title-md-about.text-capitalize.text-left About me
+                    p.text-justify.
+                        Mi chiamo Eros, sono uno studente dell'Università degli studi di Milano, da sempre appassionato di informatica
+                        e specialmente del campo della sicurezza, per il mio progetto da svolgere in programmazione Web e Mobile ho deciso di portare una WebApp
+                        che si occupa di analizzare attraverso l'analisi statica del codice sorgente i siti inseriti dall'utente tramite URL in cerca di falle che
+                        potrebberò facilitare/consentire vettori d'attacco di tipo XSS, nello specifico XSS DOM Based. Questa WebApp è svolta tramite l'utilizzo di
+                        nodejs come framework Backend e Pug come Template Engine per il Frontend, all'interno dei componenti possiamo trovare anche il tag
+                        specifico HTML5 "mark" utilizzato per evidenziare sezioni importanti nei testi. NPM è stato utilizzato come packet manager
+                        per consentire l'implementazione di componenti librerie esterni come Express, Puppeteer, pdfkit ecc...
+                        Le chiamate di rete sono state effettuate tramite la libreria express, è stata inoltre creata una API REST richiamata dal frontend attraverso
+                        una chiamata ajax per mostrare gli ultimi test effettuati..

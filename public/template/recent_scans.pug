@@ -1,0 +1,18 @@
+extends ./includes/template_ajax.pug
+
+block content
+    div.col-12.text-center.mt-3
+        div.col-12
+            h1.text-center Scansioni recenti
+            p.text-justify Di seguito è disponibile la lista delle recenti scansioni effettuate dalla piattaforma.
+            br
+        div.col-12
+            table.table
+                thead
+                    tr
+                        th(scope="col") #
+                        th(scope="col") URL
+                        th(scope="col") DOM XSS Sources
+                        th(scope="col") DOM XSS Sinks
+                        th(scope="col") Status
+                tbody(id="table_body").table-fix

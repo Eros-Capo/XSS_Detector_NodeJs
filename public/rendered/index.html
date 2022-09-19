@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XSS Detector</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="justify-content-between align-items-baseline navbar-expand-md d-flex navbar-custom">
+      <div class="container float-left"><a class="navbar-brand" href="/"><img class="navbarLogo" src="logo.png" width="30" height="30" alt="XSS Detector Logo"></a></div><!-- Collapse button -->
+      <button class="navbar-toggler toggler-example" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent8" aria-controls="navbarSupportedContent8" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-teal-text"><i class="fas fa-bars fa-1x burger-menu"></i></span></button>
+      <div class="collapse navbar-collapse nav-pd-mobile navbar-link-position text-nav float-right burger-collapse" id="navbarSupportedContent8">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active mx-3"><a class="nav-link text-white text-nowrap" href="/">Homepage</a></li>
+          <li class="nav-item mx-3"><a class="nav-link text-white text-nowrap" href="/XSSDetector">XSS Detector</a></li>
+          <li class="nav-item mx-3"><a class="nav-link text-white text-nowrap" href="/RecentScans">Recent Scans</a></li>
+          <li class="nav-item mx-3"><a class="nav-link text-white text-nowrap" href="/AboutMe">About Me</a></li>
+          <li class="nav-item mx-3"><a class="nav-link text-white text-nowrap" href="/Contacts">Contacts</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="d-flex justify-content-center">
+      <div class="home-content mt-5">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12 col-md-6 align-self-center"><img class="w-100 image-home" src="scheme.jpg" alt="Attacks scheme"></div>
+            <div class="col-12 col-md-6 align-self-center">
+              <h1 class="text-capitalize text-left">Cos'è un attacco XSS?</h1>
+              <p class="text-justify">
+                Un attacco XSS è un vettore di attacco basato sull'iniezione di codice javascript che permetta all'attaccante di eseguire codice malevolo,
+                questo tipo di vettore d'attacco risulta molto comune nel World Wide Web, tanto che ne sono state colpite aziende del calibro di:
+              </p>
+              <ul>
+                <li>Yahoo</li>
+                <li>MySpace</li>
+                <li>Hotmail</li>
+              </ul>
+              <p class="text-justify">Vi sono vari tipi di varianti come da immagine a lato, il fattore che li accomuna è che il codice iniettato deve essere interpretato come benevolo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <nav class="mt-5">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#analysis-tool" type="button" role="tab" aria-controls="analysis-tool" aria-selected="true">Source Code Analysis Tool</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#vulnerability" type="button" role="tab" aria-controls="vulnerability" aria-selected="false">Cos'è una vulnerabilità?</button>
+              <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#static-analysis" type="button" role="tab" aria-controls="static-analysis" aria-selected="false">Analisi Statica</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="analysis-tool" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+              <p class="tab-text">Strumenti di questo tipo fanno parte di una categoria chiamata "<i>Static Application Security Testing</i>",
+                sono programmi in grado di analizzare il codice sorgente o versioni compilate di codice con lo scopo di ricercare falle e vulnerabilità.
+                Uno dei loro principali punti a favore è che 
+                <mark>possono essere implementati per l'analisi di una grande quantità di software</mark>, inoltre
+                
+                <mark>sono molto utili nella ricerca di vulnerabilità "ben definite"</mark> che quindi possono essere automaticamente trovate da questi software con un'alta affidabilità.
+                L'output generato da questo tipo di software è molto utile per lo sviluppatore in quanto evidenzia le fonti precise all'interno del codice,
+                il numero di linea o intere sezioni.
+                
+              </p>
+            </div>
+            <div class="tab-pane fade" id="vulnerability" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+              <p class="tab-text">In accordo con il <b>"Common Vulnerabilities and Exposures (CVE)"</b> una vulnerabilità è per definizione
+                "<i>Un errore nel software che può essere direttamente utilizzato da un hacker per accedere ad un sistema oppure ad una rete</i>",
+                 il CVE considera la vulnerabilità uno stato in un sistema informatico che consente ad un utente malintenzionato: di eseguire
+                comandi riservati ad altri tipi di utente o ad altri utenti, accedere a dati privilegiati, mascherarsi come un'altra entità e/o influenzare il corretto comportamento del sistema.
+                Espandendo la nozione di vulnerabilità proposta dalla CVE, possiamo affermare che una vulnerabilità è un qualsiasi aspetto del software che può essere sfruttato per usare in modo
+                meschino o sleale a proprio vantaggio la riservatezza, l'integrità e/o la disponibilità del sistema. In molti casi le vulnerabilità derivano da errori nella programmazione e/o utilizzo
+                di funzioni interpretate erroneamente. Le vulnerabilità sono difetti, ma non tutti i difetti sono vulnerabilità.
+                
+              </p>
+            </div>
+            <div class="tab-pane fade" id="static-analysis" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+              <p class="tab-text">
+                L'analisi statica del codice sorgente è emersa recentemente come mezzo standard per analizzare un programma con lo scopo di trovare potenziali errori relativi alla sicurezza
+                in fase di compilazione. L'analisi statica, processo anche chiamato Static Application Security Testing (SAST) è quindi “<i>il processo di valutazione di un sistema o di un componente in base alla sua forma, struttura, contenuto o documentazione.</i>"
+                Lo scopo principale dell'analisi del codice di un'applicazione è la scoperta di potenziali errori. È "<i>statico</i>" perché analizza le applicazioni senza eseguirle,
+                il che significa che 
+                <mark>un'applicazione può essere testata in modo esauriente senza creare un ambiente di runtime o mettere a rischio i sistemi di produzione.</mark>
+                Cio' rende l'analisi del codice statico molto adatta per testare le applicazioni in ricerca dei difetti di sicurezza.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12 m-auto-sm">
+            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by<a href="https://www.linkedin.com/in/eros-capobianco/">Eros Capobianco.</a></p>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 m-auto-sm">
+            <ul class="social-icons">
+              <li><a class="github" href="https://github.com/Eros-Capo"><i class="fa-brands fa-github"></i></a></li>
+              <li><a class="stackoverflowS" href="https://stackoverflow.com/users/15300834/eros-capo"><i class="fa-brands fa-stack-overflow"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/eros-capobianco/"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer><!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>

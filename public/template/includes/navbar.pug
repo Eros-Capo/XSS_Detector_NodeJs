@@ -1,0 +1,22 @@
+nav.justify-content-between.align-items-baseline.navbar-expand-md.d-flex.navbar-custom
+    div.container.float-left
+        a.navbar-brand(href="/")
+            img.navbarLogo(src="logo.png" width="30" height="30" alt="XSS Detector Logo")
+
+    <!-- Collapse button -->
+    button.navbar-toggler.toggler-example(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent8" aria-controls="navbarSupportedContent8" aria-expanded="false" aria-label="Toggle navigation")
+        span.dark-teal-text
+            i.fas.fa-bars.fa-1x.burger-menu
+
+    div.collapse.navbar-collapse.nav-pd-mobile.navbar-link-position.text-nav.float-right.burger-collapse(id="navbarSupportedContent8")
+        ul.navbar-nav.mr-auto
+            li.nav-item.active.mx-3
+                a.nav-link.text-white.text-nowrap(href='/') Homepage
+            li.nav-item.mx-3
+                a.nav-link.text-white.text-nowrap(href='/XSSDetector') XSS Detector
+            li.nav-item.mx-3
+                a.nav-link.text-white.text-nowrap(href='/RecentScans') Recent Scans
+            li.nav-item.mx-3
+                a.nav-link.text-white.text-nowrap(href='/AboutMe') About Me
+            li.nav-item.mx-3
+                a.nav-link.text-white.text-nowrap(href='/Contacts') Contacts

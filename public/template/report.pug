@@ -1,0 +1,19 @@
+extends ./includes/template_page.pug
+
+block content
+    - var pdf = "http://localhost:8080/reports/"+ data;
+    div.report-content
+        div.container-80-nomg
+            div.col-12
+                h1.text-center
+                    p.text-justify Di seguito è disponibile il report sulle eventuali vulnerabilità!
+                br
+                span.info-text.
+                    **Ricordiamo che per poter visualizzare il documento
+                    è necessario possedere un estensione che permetta la visualizzazione di pdf,
+                    in alternativa è possibile visualizzarla tramite Microsoft Edge!
+
+                div.d-flex.justify-content-center.text-center
+                    object(data=pdf type="application/pdf" width="100%" height="800")
+                        iframe(src=pdf width="100%" height="800")
+                            p This browser does not support PDF!
